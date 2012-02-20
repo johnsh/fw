@@ -1,0 +1,4 @@
+#Options +FollowSymLinks
+RewriteEngine on
+#RewriteRule (.*) core/init.php
+RewriteRule ^(\w+)/?/(\w+)/?$ core/init.php?c=$1&a=$2
