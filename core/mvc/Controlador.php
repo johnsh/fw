@@ -11,9 +11,10 @@ class Controlador{
         $this->controlador = $c;
         $this->accion = $a;
         require_once(RAIZ_PROYECTO . 'app/appControlador.php');
+        
         require_once(RAIZ_PROYECTO . 'app/controladores/' . $this->controlador  . '/'. $this->controlador . '.php');
-        //$objeControlador =  new $this->controlador();
-        //$objeControlador->$this->accion();
+        call_user_func( array( new $this->controlador(), $this->accion ) );
+        
     }
     private function existe_controlador() {
         
